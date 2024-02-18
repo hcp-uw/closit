@@ -6,6 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>This is me testing how to use Expo Go!</Text>
+      <Text>This is me testing a merge req</Text>
       <StatusBar style="auto" />
       <SomeComponent />
     </View>
