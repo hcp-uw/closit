@@ -5,6 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SomeComponent from './src/SomeComponent';
 import Outfits from './src/outfits/Outfits';
+import Camera from './src/testPages/Camera';
+import Inspiration from './src/testPages/Inspiration';
+import Calendar from './src/testPages/Calendar';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,30 +27,56 @@ export default function App() {
 function BottomNavigationBar() {
   return (
     <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarStyle: {
-            backgroundColor: '#22333B',
-          },
-          tabBarIcon: ({ color, size }) => {
-            let iconName;
+      screenOptions={({ route }) => ({
+        tabBarStyle: {
+          backgroundColor: '#22333B',
+        //   position: 'absolute',
+        //   overflow: 'hidden',
+        //   height: 400,
+        //   width: 'auto',
+        //   transform: [
+        //     {scaleX: 2}
+        //   ],
+        //   borderRadius: 200,
+        //   top: 325,
+          
+        },
+        tabBarIcon: ({ color, size }) => {
+          
+          let iconName;
 
-            if (route.name === 'SomeComponent') {
-              iconName = 'hanger';
-            }
-            else if (route.name === 'Outfits') {
-              iconName = 'tshirt-crew-outline';
-            }
-            return <Icon name={iconName} size={size} color={color} />;
-          },
-          tabBarActiveTintColor: '#7F7F7F',
-          tabBarInactiveTintColor: '#FFFFFF',
-        })}
-      >
-        <Tab.Screen 
-          name="SomeComponent" component={SomeComponent} />
-        <Tab.Screen 
-          name="Outfits" component={Outfits}/>
-      </Tab.Navigator>
+          if (route.name === 'SomeComponent') {
+            iconName = 'hanger';
+          }
+          else if (route.name === 'Outfits') {
+            iconName = 'tshirt-crew-outline';
+          }
+          else if (route.name === 'Camera') {
+            iconName = 'camera-outline';
+          }
+          else if (route.name === 'Inspiration') {
+            iconName = 'lightbulb-variant-outline';
+          }
+          else if (route.name === 'Calendar') {
+            iconName = 'calendar';
+          }
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: '#7F7F7F',
+        tabBarInactiveTintColor: '#FFFFFF',
+      })}
+    >
+    <Tab.Screen 
+      name="SomeComponent" component={SomeComponent} />
+    <Tab.Screen 
+      name="Outfits" component={Outfits}/>
+    <Tab.Screen 
+      name="Camera" component={Camera}/>
+    <Tab.Screen 
+      name="Inspiration" component={Inspiration}/>
+    <Tab.Screen 
+      name="Calendar" component={Calendar}/>
+    </Tab.Navigator>
   );
 }
 
@@ -57,5 +86,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
   },
 });
