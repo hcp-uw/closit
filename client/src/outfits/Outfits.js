@@ -7,12 +7,12 @@ export default SomeComponent = () => {
   // This is what we want the component to return.
   return (
     <Text style={styles.text}> {/* Here I am using the styles StyleSheet to change the text's color. */}
-      This is a component.
+      This is an outfit.
       I can display data, {number}, using curly brackets!
     </Text>
   )
 }
-// test
+
 // You can style components and tags using StyleSheet
 const styles = StyleSheet.create({
   text: {

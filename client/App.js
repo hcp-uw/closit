@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import SomeComponent from './src/SomeComponent';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomNavigationBar from "./src/components/BottomNavigationBar";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>This is me testing how to use Expo Go!</Text>
-      <Text>This is me testing a merge req</Text>
-      <StatusBar style="auto" />
-      <SomeComponent />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Text>This is me testing how to use Expo Go!</Text>
+        <Text>This is me testing a merge req</Text>
+        <StatusBar style="auto" />
+      </View>
+      <BottomNavigationBar />
+    </NavigationContainer>
   );
 }
 
@@ -19,5 +22,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
   },
 });
