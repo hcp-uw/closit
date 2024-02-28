@@ -12,7 +12,7 @@ export default SomeComponent = () => {
     </Text>
   )
 }
-// test
+
 // You can style components and tags using StyleSheet
 const styles = StyleSheet.create({
   text: {
